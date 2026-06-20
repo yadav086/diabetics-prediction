@@ -38,7 +38,7 @@ X_train, X_test, y_train, y_test = train_test_split(
 num_columns = X.columns.tolist()
 transform_column = Pipeline(
     steps=[
-        ("missing", SimpleImputer(strategy="median", missing_values=np.nan)),
+        ("missing", SimpleImputer(strategy="median")),
         ("Scale", PowerTransformer(method="yeo-johnson")),
     ]
 )
